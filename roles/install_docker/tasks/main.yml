@@ -1,0 +1,21 @@
+- name: install the latest version of Docker
+  yum:
+   name: docker
+   state: latest
+
+- name: install the latest version of Epel
+  yum:
+   name: 
+     - epel-release
+   state: latest
+
+- name: install the latest version of Python-pip
+  yum:
+   name:
+     - mlocate
+     - python-pip
+   state: latest
+
+- name: install the latest version of Docker-compose from pip
+  pip:
+   name: docker-compose

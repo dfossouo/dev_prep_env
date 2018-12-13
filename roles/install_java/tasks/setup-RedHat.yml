@@ -1,5 +1,12 @@
 ---
-- name: Ensure Java is installed.
-  package:
-    name: "{{ java_packages }}"
-    state: present
+
+- name: Download Java JDK
+  get_url:
+   url: https://download.oracle.com/otn-pub/java/jdk/11.0.1+13/90cf5d8f270a4347a95050320eef3fb7/jdk-11.0.1_linux-x64_bin.rpm
+   dest: /opt/jdk-11.0.1_linux-x64_bin.rpm
+   headers: 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
+
+- name: Install Java JDK rpm from a local file
+  yum:
+   name: /opt/jdk-11.0.1_linux-x64_bin.rpm
+   state: present

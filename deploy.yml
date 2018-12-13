@@ -5,3 +5,4 @@
    - install_java
    - install_scala 
    - install_maven
+   - install_docker
