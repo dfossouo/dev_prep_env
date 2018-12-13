@@ -1,0 +1,7 @@
+---
+
+- hosts: localhost
+  roles:
+   - install_java
+   - install_scala 
+   - install_maven
